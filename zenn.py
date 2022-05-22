@@ -1,8 +1,8 @@
 from selenium import webdriver
-import chromedriver_binary # 自動でPATHが通る
+from webdriver_manager.chrome import ChromeDriverManager
 
 #接続
-driver = webdriver.Chrome()
+driver = webdriver.Chrome(ChromeDriverManager().install())
 
 url = 'https://www.google.co.jp/'
 driver.get(url)
