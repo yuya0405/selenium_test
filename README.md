@@ -7,4 +7,5 @@ source py37env/bin/activate
 
 pip install webdriver
 pip install chromedriver
+pip install chromedriver-binary
 ```
