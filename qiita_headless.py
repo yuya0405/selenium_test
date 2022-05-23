@@ -18,5 +18,11 @@ search_box.send_keys('ChromeDriver')
 search_box.submit()
 print(driver.title)
 
+for g_h3 in driver.find_elements(by=By.CSS_SELECTOR, value=".g h3"):
+    print(g_h3.text)
+
+# stats = driver.find_element(by=By.ID, value="resultStats").text
+# print(stats)
+
 driver.save_screenshot('search_results.png')
 driver.quit()
