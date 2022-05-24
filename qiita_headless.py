@@ -35,5 +35,13 @@ for g_h3 in driver.find_elements(by=By.CSS_SELECTOR, value=".g h3"):
 #     s = g.find_element(By.CLASS_NAME, "s")
 #     print("\t" + s.find_element(By.CLASS_NAME, "st").text)
 
+# 完全マッチ
+for a in driver.find_elements(by=By.LINK_TEXT, value="このページを訳す"):
+    print(a.get_attribute("href"))
+
+# 部分マッチ
+for a in driver.find_elements(by=By.PARTIAL_LINK_TEXT, value="訳す"):
+    print(a.get_attribute("href"))
+
 driver.save_screenshot('search_results.png')
 driver.quit()
