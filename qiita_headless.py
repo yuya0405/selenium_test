@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome import service as fs
 from webdriver_manager.chrome import ChromeDriverManager
+from selenium.webdriver.common.action_chains import ActionChains
 
 chrome_service = fs.Service(ChromeDriverManager().install())
 
@@ -42,6 +43,14 @@ for a in driver.find_elements(by=By.LINK_TEXT, value="このページを訳す")
 # 部分マッチ
 for a in driver.find_elements(by=By.PARTIAL_LINK_TEXT, value="訳す"):
     print(a.get_attribute("href"))
+
+# ホバーするものがない？？？
+
+# # ホバー（マウスオーバーする）
+# actions = ActionChains(driver)
+# actions.move_to_element(
+#     driver.find_element(by=By.CLASS_NAME, value="name")
+# ).perform()  # hoverする
 
 driver.save_screenshot('search_results.png')
 driver.quit()
