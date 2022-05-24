@@ -52,5 +52,11 @@ for a in driver.find_elements(by=By.PARTIAL_LINK_TEXT, value="訳す"):
 #     driver.find_element(by=By.CLASS_NAME, value="name")
 # ).perform()  # hoverする
 
+# ドラッグ＆ドロップするものがない？？？
+
+# src = driver.find_element_by_name("source")
+# tgt = driver.find_element_by_name("target")
+# actions.drag_and_drop(src, tgt).perform()
+
 driver.save_screenshot('search_results.png')
 driver.quit()
